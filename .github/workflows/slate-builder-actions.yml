@@ -14,7 +14,7 @@ jobs:
       with:
         args: .*\\.md$
     - name: Build documentation
-      uses: .
+      uses: ./
       env:
         DOC_BASE_FOLDER: .
         ZIP_BUILD: false
