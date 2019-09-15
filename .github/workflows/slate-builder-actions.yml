@@ -5,10 +5,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
-    - name: files-filter
-      uses: wcchristian/gh-pattern-filter-action@master
-      with:
-        args: .*\\.md$
     - name: Build documentation
       uses: ./
       env:
