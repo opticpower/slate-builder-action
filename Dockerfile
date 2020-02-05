@@ -1,4 +1,4 @@
-FROM ruby:2.3-alpine
+FROM ruby:2.6-alpine
 LABEL maintainer="developers@decathlon.com"
 LABEL "com.github.actions.name"="Slate Documentation builder"
 LABEL "com.github.actions.description"="Build repository md files using the slate framework"
@@ -17,6 +17,8 @@ RUN apk --no-cache --update add nodejs g++ make coreutils git zip && \
     git clone https://github.com/lord/slate.git /usr/src/app && \
     bundle install && \
     chmod +x /usr/src/scripts/*.sh
+    
+RUN gem install bundler
 
 VOLUME ["/usr/src/doc"]
 
