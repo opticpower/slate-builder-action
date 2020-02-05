@@ -11,7 +11,6 @@ ENV ZIP_BUILD=${ZIP_BUILD:-"true"}
 WORKDIR /usr/src/app
 
 COPY scripts/*.sh /usr/src/scripts/
-COPY index.html.md /usr/src
 
 RUN gem install bundler
 
