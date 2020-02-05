@@ -16,7 +16,7 @@ COPY index.html.md /usr/src
 RUN gem install bundler
 
 RUN apk --no-cache --update add nodejs g++ make coreutils git zip && \
-    git clone https://github.com/lord/slate.git /usr/src/app && \
+    git clone https://github.com/slatedocs/slate.git /usr/src/app && \
     bundle install && \
     chmod +x /usr/src/scripts/*.sh
     
