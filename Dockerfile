@@ -13,13 +13,13 @@ WORKDIR /usr/src/app
 COPY scripts/*.sh /usr/src/scripts/
 COPY index.html.md /usr/src
 
+RUN gem install bundler
+
 RUN apk --no-cache --update add nodejs g++ make coreutils git zip && \
     git clone https://github.com/lord/slate.git /usr/src/app && \
     bundle install && \
     chmod +x /usr/src/scripts/*.sh
     
-RUN gem install bundler
-
 VOLUME ["/usr/src/doc"]
 
 ENTRYPOINT ["sh", "/usr/src/scripts/prepare_doc.sh" ]
