@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-cp $DOC_BASE_FOLDER/* /usr/src/app/source
+cp -R $DOC_BASE_FOLDER/* /usr/src/app/source
 
 cd /usr/src/app/source
 bundle exec middleman build --clean
