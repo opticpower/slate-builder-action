@@ -21,5 +21,4 @@ RUN apk --no-cache --update add nodejs g++ make coreutils git zip && \
     
 VOLUME ["/usr/src/doc"]
 
-ENTRYPOINT ["sh", "/usr/src/scripts/prepare_doc.sh" ]
 CMD ["sh", "/usr/src/scripts/build.sh"]
