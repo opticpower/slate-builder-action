@@ -9,6 +9,8 @@ if [ ! -z "$TEMPLATE_REPO" ]; then
     git pull https://${GH_PAT}@github.com/$TEMPLATE_REPO
     rm -rf /usr/src/app/source/*
     cp -R /usr/src/template/* /usr/src/app/source
+    cp images/logo.png /usr/src/images/logo.png || echo "No custom logo detected using default one."
+    cp stylesheets/_variables.scss /usr/src/stylesheets/_variables.scss || echo "No custom stylesheet detected using default one."
     cp index.html.md /usr/src/index.html.md || echo "No custom index file detected using default one."
     cd $GITHUB_WORKSPACE
 fi
